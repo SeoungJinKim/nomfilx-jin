@@ -16,6 +16,13 @@ module.exports = {
     ecmaVersion: 11,
     sourceType: "module",
   },
+  parser: "babel-eslint",
   plugins: ["react"],
-  rules: {},
+  rules: {
+    "no-unused-vars": 1,
+    "no-console": 0,
+    "react/jsx-filename-extension": 0,
+    "react/display-name": "off",
+    "prettier/prettier": "error",
+  },
 };
