@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import DetailPresenter from "./DetailPresenter";
-import { moviesApi } from "../../api";
+import { moviesApi, tvApi } from "../../api";
 
 export default class extends React.Component {
   constructor(props) {
@@ -33,7 +34,7 @@ export default class extends React.Component {
       if (isMovie) {
         ({ data: result } = await moviesApi.movieDetail(parsedId));
       } else {
-        ({ data: result } = await moviesApi.movieDetail(parsedId));
+        ({ data: result } = await tvApi.showDetail(parsedId));
       }
     } catch {
       this.setState({ error: "Can't find anything." });
